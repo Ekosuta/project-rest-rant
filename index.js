@@ -11,7 +11,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
 //controllers and routes
-app.use('/places', require('./controllers/places'))
+app.use('/places', require('./controllers/places.js'))
 
 app.get('/', (req, res) => {
     res.render('home')

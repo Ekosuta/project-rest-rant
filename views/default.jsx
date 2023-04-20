@@ -11,6 +11,15 @@ function Def (html) {
             </head>
             <body>
                 {html.children}
+                <footer className="footer">
+                    <div className="container text-center">
+                        <span className="text-muted">
+                            <a href="">My Resume     </a>
+                            <a href="">My Portfolio     </a>
+                            <a href="">My LinkedIn</a>
+                        </span>
+                    </div>
+                </footer>
             </body>
         </html>
     )

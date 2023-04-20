@@ -5,17 +5,22 @@ function home () {
     return(
         <Def>
             <main>
-                <h1>Home</h1>
-                <div>
-                    <img src="/images/spicy-food-layout.jpg" alt="Spicy Feast" />
+                <h1>REST-rant</h1>
+                <div className='text-center'>
+                    <img src="/images/spicy-food-layout.jpg" alt="Spicy Feast"/>
                     <div>
                         Photo by <a href="https://unsplash.com/@lvnatikk">Lily Banse</a> on <a href="https://unsplash.com/">Unsplash</a>
                     </div>
                 </div>
             </main>
-            <a href="/places">
+            <div className='text-center'>
+                <a href="/places">
                 <button className='btn-primary'>Places Page</button>
-            </a>
+                </a>
+            </div>
+            <div className='col-sm-6'>
+                <img src="" alt="" />
+            </div>
         </Def>
     )
 }

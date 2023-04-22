@@ -10,14 +10,33 @@ function Def (html) {
                 <link rel="stylesheet" href="/css/style.css"/>
             </head>
             <body>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/places">Places</a>
+                        </li>
+                        <li>
+                            <a href="/places/new">Add Place</a>
+                        </li>
+                    </ul>
+                </nav>
                 {html.children}
                 <footer className="footer">
                     <div className="container text-center">
-                        <span className="text-muted">
-                            <a href="">My Resume     </a>
-                            <a href="">My Portfolio     </a>
-                            <a href="">My LinkedIn</a>
-                        </span>
+                        <ul>
+                            <li>
+                                <a href="">My Resume     </a>
+                            </li>
+                            <li>
+                                <a href="">My Portfolio     </a>
+                            </li>
+                            <li>
+                                <a href="">My LinkedIn</a>
+                            </li>
+                        </ul>
                     </div>
                 </footer>
             </body>

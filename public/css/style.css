@@ -76,3 +76,17 @@ nav a:hover {
 #state {
     text-align: center;
 }
+
+.container h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: cornflowerblue;
+}
+
+.container h5 {
+    padding-bottom: 20px;
+}
+
+.container .card {
+    margin-bottom: 100px;
+}

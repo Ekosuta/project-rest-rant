@@ -1,5 +1,5 @@
 const React = require('react')
-const { head } = require('../controllers/places')
+const { head } = require('../controllers/placesController')
 
 function Def (html) {
     return(

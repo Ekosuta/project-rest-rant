@@ -6,26 +6,26 @@ function edit_form(data) {
         <Def>
             <main>
                 <h1>Editing Page</h1>
-                <form action={`/places/${data.id}?_method=PUT`} method='POST'>
+                <form id="form" action={`/places/${data.id}?_method=PUT`} method='POST'>
                     <div className='row'>
                         <div className='form-group col-sm-6'>
                             <label htmlFor="name">Place Name</label>
-                            <input name="name" id="name" className="form-control" defaultValue={data.place.name} required/>
+                            <input name="name" id="name" className="form-control" required/>
                         </div>
                         <div className='form-group col-sm-6'>
                             <label htmlFor="pic">Place Picture</label>
-                            <input name="pic" id="pic" className="form-control" defaultValue={data.place.pic} />
-                        </div>   
+                            <input name="pic" id="pic" className="form-control" />
+                        </div>
                     </div>
                     <div className='row'>
-                        <div className='form-group col-sm-6'>
+                        <div className='form-group col-sm-4'>
                             <label htmlFor="city">City</label>
-                            <input name="cit" id="city" className="form-control" defaultValue={data.place.city}/>
+                            <input name="cit" id="city" className="form-control" />
                         </div>
-                        <div className='form-group col-sm-6'>
+                        <div className='form-group col-sm-4'>
                             <label htmlFor="state">State</label>
-                            <select name="state" id="state" className="form-control" defaultValue={data.place.state}>
-                                <option value="filler" selected>Select a State</option>
+                            <select name="state" id="state" className="form-control">
+                                <option value="filler" selected>---</option>
                                 <option value="Alabama">AL</option>
                                 <option value="Alaska">AK</option>
                                 <option value="Arizona">AZ</option>
@@ -78,16 +78,16 @@ function edit_form(data) {
                                 <option value="Wyoming">WY</option>
                             </select>
                         </div>
+                        <div className="form-group col-sm-4">
+                            <label htmlFor="founded">Founded Year</label>
+                            <input className="form-control" id="founded" name="founded" />
+                        </div>
                     </div>
                     <div className='form-group'>
                         <label htmlFor="cuisines">Cuisines</label>
-                        <input name="cuisines" id="cuisines" className="form-control" defaultValue={data.place.cuisines} required/>
+                        <input name="cuisines" id="cuisines" className="form-control" required/>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="founded">Founded Year</label>
-                        <input className="form-control" id="founded" name="founded" defaultValue={data.place.founded}/>
-                    </div>
-                    <input className='btn btn-primary' type="submit" value="Add Place"/>
+                    <input id="submit-btn" className='btn btn-primary' type="submit" value="Add Place"/>
                 </form>
             </main>
         </Def>

@@ -11,6 +11,7 @@ function show(data) {
                 <div className='container text-center row'>
                     <div className='col'>
                         <img src={data.place.pic} />
+                        <h3>Located in {data.place.city}, {data.place.state}</h3>
                     </div>
                     <div className='col'>
                         <div className='card'>
@@ -19,16 +20,23 @@ function show(data) {
                         </div>
                         <div className='card'>
                             <h2 className='card-title'>Description</h2>
-                            <h5 className='card-text'>Located in {data.place.city}, {data.place.state} and serving {data.place.cuisines}</h5>
+                            <h3>{data.place.showEstablished()}</h3>
+                            <h5>Serving {data.place.cuisines}</h5>
                         </div>
-                        <a href={`/places/${data.id}/edit`} className='btn btn-warning'>
-                            Edit
-                        </a>
-                        <form method='POST' action={`/places/${data.id}?_method=DELETE`}>
-                            <button type='submit' className='btn btn-danger'>
-                                Delete
-                            </button>
-                        </form>
+                        <div className='container text-center row'>
+                            <div className='col-sm-6'>
+                                <a href={`/places/${data.id}/edit`} className='btn btn-warning col-sm-6'>
+                                    Edit
+                                </a>
+                            </div>
+                            <div className='col-sm-6'>
+                                <form method='POST' action={`/places/${data.id}?_method=DELETE`}>
+                                    <button type='submit' className='btn btn-danger col-sm-6'>
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr />

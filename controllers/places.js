@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  db.Place.find()
+  res.render('places/new')
 })
 
 router.get('/:id', (req, res) => {

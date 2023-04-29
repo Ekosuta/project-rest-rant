@@ -79,10 +79,13 @@ function edit_form(data) {
                             </select>
                         </div>
                     </div>
-                    
                     <div className='form-group'>
                         <label htmlFor="cuisines">Cuisines</label>
                         <input name="cuisines" id="cuisines" className="form-control" defaultValue={data.place.cuisines} required/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="founded">Founded Year</label>
+                        <input className="form-control" id="founded" name="founded" defaultValue={data.place.founded}/>
                     </div>
                     <input className='btn btn-primary' type="submit" value="Add Place"/>
                 </form>

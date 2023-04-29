@@ -88,7 +88,8 @@ nav a:hover {
 }
 
 .container .card {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 #form {
@@ -100,6 +101,7 @@ nav a:hover {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .form-group {
     margin-top: 20px;
     margin-bottom: 20px;

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+const {Schema} = mongoose
 
-const placeSchema = new mongoose.Schema({
+const placeSchema = new Schema({
   name: {type: String, required: true},
   pic: {type: String, default: 'http://placekitten.com/350/350'},
   city: {type: String, default: 'Anytown'},
@@ -10,7 +11,8 @@ const placeSchema = new mongoose.Schema({
     type: Number,
     min: [1673, 'Surely not that old!'],
     max: [new Date().getFullYear(), 'Hey, this year is in the future']
-  }
+  },
+  comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 })
 
 placeSchema.methods.showEstablished = function() {

@@ -11,7 +11,7 @@ function show(data) {
         comments = data.place.comments.map(c => {
             return(
                 <div className='card'>
-                    <h2 className='rant'>{c.rant ? 'Rant! :(' : 'Rave! :)'}</h2>
+                    <h2 key="rant" className='rant'>{c.rant ? 'Rant! :(' : 'Rave! :)'}</h2>
                     <h4>{c.content}</h4>
                     <h3>
                         <strong>- {c.author}</strong>
@@ -44,12 +44,12 @@ function show(data) {
                         </div>
                         <div className='container text-center row'>
                             <div className='col-sm-6'>
-                                <a href={`/places/${data.id}/edit`} className='btn btn-warning col-sm-6'>
+                                <a href={`/places/${data.place.id}/edit`} className='btn btn-warning col-sm-6'>
                                     Edit
                                 </a>
                             </div>
                             <div className='col-sm-6'>
-                                <form method='POST' action={`/places/${data.id}?_method=DELETE`}>
+                                <form method='POST' action={`/places/${data.place.id}?_method=DELETE`}>
                                     <button type='submit' className='btn btn-danger col-sm-6'>
                                         Delete
                                     </button>
@@ -62,6 +62,31 @@ function show(data) {
                 <div id="rant-card" className='container text-center'>
                     <h2>Comments</h2>
                     {comments}
+                </div>
+                <hr />
+                <div id='rant-card' className='container text-center'>
+                    <h2>Got Your Own Rant or Rave?</h2>
+                    <form id="form" action={`/places/${data.place.id}/comment`} method='POST'>
+                    <div className='row'>
+                        <div className='col-sm-4'>
+                            <label htmlFor="author">Author</label>
+                            <input type="text" name="author" id="author" className='form-control'/>
+                        </div>
+                        <div className='col-sm-4'>
+                            <label htmlFor="stars">Star Rating</label>
+                            <input type="range" className='form-range' min={0} max={5} step={0.5} id='stars' name='stars'/>
+                        </div>
+                        <div className='col-sm-2 form-check'>
+                            <label htmlFor="rant" className='form-check-label'>Rant?</label>
+                            <input type="checkbox" name="rant" id="rant" className='form-check-input form-control'/>
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <label htmlFor="content" >Comment</label>
+                        <input type="textarea" name='content' id='content' className='form-control'/>
+                    </div>
+                    <input type="submit" className='btn btn-primary' id="submit-btn" value="Add Comment"/>
+                </form>
                 </div>
             </main>
         </Def>

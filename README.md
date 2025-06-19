@@ -61,4 +61,4 @@ Possible bonus ideas:
 
 * Update for comments
 * Aggregate rating for a place
-* Auto-complete state dropdown
+* Auto-complete state dropdown# rest_rant
